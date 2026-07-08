@@ -267,6 +267,42 @@ body { padding-top: var(--cg-strip-h); }
 .cg-colophon-note { margin: 4px 0 0; color: #9a9aa8; }
 @media (max-width: 640px) { .cg-strip-label { display: none; } }
 @media (prefers-reduced-motion: reduce) { .cg-skip { transition: none; } }
+
+/* ---- Mobile reading view (touch / small screens) ------------------------------------- */
+/* The immersive per-구 template is desktop-only. On touch devices and narrow screens the
+   .cg-read view is shown instead — it uses only safe, high-contrast CSS so text can never
+   go invisible on iOS Safari (no background-clip:text, backdrop-filter, 100vh, :hover-gated
+   reveals, or mix-blend-mode). Fully namespaced + generator-controlled. */
+.cg-read { display: none; }
+@media (hover: none) and (pointer: coarse), (max-width: 768px) {
+  /* Neutralise immersive templates that lock scrolling / lock the viewport on <body>. */
+  html, body { overflow-x: hidden !important; overflow-y: auto !important; height: auto !important;
+    min-height: 0 !important; position: static !important; touch-action: auto !important; background: #ffffff !important; }
+  .cg-immersive { display: none !important; }
+  .cg-read { display: block; }
+}
+.cg-read { max-width: 720px; margin: 0 auto; padding: 20px 18px 8px;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  color: #17171f; background: #ffffff; line-height: 1.75; -webkit-text-size-adjust: 100%; }
+.cg-read * { max-width: 100%; box-sizing: border-box; }
+.cg-read-head { padding: 8px 0 16px; border-bottom: 3px solid var(--cg-ra, #2d5bff); margin-bottom: 20px; }
+.cg-read-eyebrow { margin: 0 0 4px; color: var(--cg-rd, #333); font-weight: 700; font-size: 15px; letter-spacing: .02em; }
+.cg-read-head h1 { margin: 0; font-size: clamp(30px, 8vw, 40px); line-height: 1.15; color: #14141c; font-weight: 800; }
+.cg-read h2 { font-size: 20px; margin: 30px 0 10px; padding-left: 11px; color: #14141c; font-weight: 700;
+  border-left: 5px solid var(--cg-ra, #2d5bff); }
+.cg-read p { margin: 0 0 12px; font-size: 17px; color: #23232d; }
+.cg-read section { margin: 0; }
+.cg-read ul { margin: 8px 0 0; padding-left: 20px; }
+.cg-read li { margin: 8px 0; font-size: 16px; color: #23232d; }
+.cg-read li strong { color: #111119; font-weight: 700; }
+.cg-read .facts, .cg-read .symbols { list-style: none; padding: 14px 16px; margin: 8px 0 0;
+  background: #f5f6fa; border: 1px solid #e6e8f0; border-radius: 12px; }
+.cg-read .faq details { border: 1px solid #e6e8f0; border-radius: 10px; padding: 10px 14px; margin: 8px 0; background: #fbfbfd; }
+.cg-read .faq summary { cursor: pointer; font-weight: 700; font-size: 16px; color: #14141c; }
+.cg-read .faq details p { margin: 8px 0 2px; color: #44454f; }
+.cg-read a { color: #1a46d8; word-break: break-word; }
+.cg-read .sources { font-size: 14px; color: #55565f; }
+.cg-read .sources a { color: #3a5bd0; }
 </style>
 </head>
 <body>
@@ -275,6 +311,7 @@ body { padding-top: var(--cg-strip-h); }
     <span class="cg-ad">AD</span><span class="cg-strip-label">후원 파트너</span><span class="cg-strip-list"><a class="cg-strip-item" href="https://ikoffices.com" rel="sponsored noopener" target="_blank">일광오피스</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://mobidicsaju.com" rel="sponsored noopener" target="_blank">모비딕 사주</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://www.foodskorea.com/" rel="sponsored noopener" target="_blank">전국팔도 식품도감</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://myflowmakers.com" rel="sponsored noopener" target="_blank">마이플로우메이커스</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://yeonlijispace.com" rel="sponsored noopener" target="_blank">연리지 인테리어</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://yeonliji.io" rel="sponsored noopener" target="_blank">주식회사 연리지</a><span class="cg-strip-dot" aria-hidden="true">·</span><span class="cg-strip-item cg-strip-text">세무·법률 자문</span></span>
   </aside>
   <div id="cg-main" tabindex="-1"></div>
+  <div class="cg-immersive">
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700;900&family=Nanum+Myeongjo:wght@400;700;800&display=swap");
 
@@ -881,6 +918,130 @@ body { padding-top: var(--cg-strip-h); }
   render();
 })();
 </script>
+  </div>
+  <main class="cg-read" id="cg-read" role="main" lang="ko" style="--cg-ra:#892bab;--cg-ra2:#d039a3;--cg-rd:#461957">
+    <header class="cg-read-head">
+      <p class="cg-read-eyebrow">대구광역시</p>
+      <h1>중구</h1>
+    </header>
+    <div class="cg-read-body">
+      <section id="r-intro">
+        <h2>지역 소개</h2>
+        <p>대구광역시 중구는 조선시대 경상감영이 자리하며 영남의 행정·상업 중심으로 이름을 떨친 대구의 원도심이다. 동성로와 반월당을 축으로 백화점·패션 상가·먹자골목이 촘촘히 이어져 지금도 대구 최대의 도심 상권으로 손꼽힌다. 서문시장과 약령시(약전골목), 방천시장을 비롯한 전통 시장이 근대 골목의 붉은 벽돌 건물, 선교사 주택과 어우러져 도시 여행의 색을 짙게 만든다. 100년 넘은 계산성당과 청라언덕, 김광석다시그리기길처럼 근대와 대중문화가 겹쳐진 명소가 걸어서 닿는 거리에 밀집해 있다. 면적은 대구 8개 자치구 가운데 가장 작지만, 도시철도 두 노선이 교차하는 반월당역을 품어 하루 유동 인구가 가장 두터운 곳이다.</p>
+      </section>
+      <section id="r-facts">
+        <h2>주요 통계</h2>
+        <ul class="facts">
+          <li>인구: 약 100,950명 (2025)</li>
+          <li>면적: 7.06 km²</li>
+          <li>신설: 1963년</li>
+        </ul>
+      </section>
+      <section id="r-history">
+        <h2>역사</h2>
+        <p>중구 일대는 1601년 경상감영이 지금의 포정동에 옮겨 오면서 경상도의 행정·사법·군무를 총괄하는 감영 도시로 성장했다. 정조 대에는 대구읍성이 축조되어 성안(성내) 마을이 형성됐으나, 1906년 관찰사 서리 박중양이 성벽을 헐어 그 자리에 동성로·서성로 같은 도로가 놓이며 도심의 골격이 잡혔다. 개항기에는 미국 북장로회 선교사들이 동산에 정착해 제중원(현 동산병원)과 계성학교·신명학교를 세우며 대구 근대 의료·교육의 요람이 되었다. 1907년 서상돈·김광제 등이 이곳에서 국채보상운동을 발기해 나라 빚을 국민 성금으로 갚자는 운동의 발원지로 기록되었고, 1919년 3·1운동 때는 학생들이 청라언덕에서 계산성당으로 이어지는 길을 따라 만세를 외쳤다. 1963년 구제(區制) 실시로 중구가 설치되었고 1988년 자치구로 승격, 1995년 대구광역시 중구로 개칭되어 오늘에 이른다.</p>
+      </section>
+      <section id="r-geography">
+        <h2>지리·자연환경</h2>
+        <p>중구는 대구 분지의 한가운데 낮게 펼쳐진 저지대에 자리해 8개 자치구 중 면적이 가장 작고 산지가 거의 없는 평지형 도심이다. 동쪽으로는 신천을 사이에 두고 동구·수성구와, 남쪽으로는 명덕로를 경계로 남구와 맞닿으며, 북쪽은 경부선 철로를 따라 북구 칠성동과 나뉜다. 관내를 가로지르는 큰 하천은 없지만 동편 경계를 흐르는 신천이 도심의 물길 역할을 하며 산책로와 둔치가 조성돼 있다. 자연 구릉으로는 개신교 선교 유적이 모인 청라언덕(동산)과 남쪽의 낮은 언덕들이 있어 근대 골목 여행의 배경이 된다. 도심 개발이 오래 진행된 지역인 만큼 녹지는 달성공원, 국채보상운동기념공원, 경상감영공원 같은 조성 공원이 대표적인 쉼터로 기능한다.</p>
+      </section>
+      <section id="r-characteristics">
+        <h2>지역 특징</h2>
+        <p>중구는 약 10만 명이 거주하는 소규모 도심이지만 주간 인구가 상주 인구를 크게 웃도는 전형적인 상업·업무 집약형 자치구다. 동성로와 반월당, 대구백화점 일대가 대구 최대의 도심 소매·패션 상권을 이루고, 서문시장과 약령시·교동시장·염매시장 등 전통 시장이 도소매 유통의 한 축을 담당한다. 약령시는 조선시대부터 이어진 한약재 특화 시장으로, 남산동에는 인쇄업소가 밀집한 인쇄골목이, 봉산동에는 화방과 표구점이 모인 봉산문화거리가 형성돼 업종별 특화 골목이 발달했다. 근대 건축물과 골목 자원을 관광 상품으로 엮은 근대문화골목 투어가 활성화되어 도심 관광·문화산업의 비중이 크다. 구의 상징으로는 구화 백일홍, 구목 느티나무, 구조 백로가 지정돼 있다.</p>
+      </section>
+      <section id="r-landmarks">
+        <h2>대표 명소</h2>
+        <ul>
+          <li><strong>동성로</strong> — 대구백화점 앞을 중심으로 뻗은 대구 최대의 도심 상업 거리로, 옛 대구읍성 동쪽 성벽 자리에 조성돼 이름이 붙었다. 패션 상가와 먹거리, 공연·버스킹이 어우러져 대구의 젊음과 유행이 모이는 번화가다.</li>
+          <li><strong>서문시장</strong> — 대신동 일원에 자리한 대구 최대이자 조선시대 전국 3대 장터의 하나로 꼽히던 전통 시장이다. 주단·포목 등 섬유 관련 품목이 유명하며 6개 지구에 약 4,500여 개 점포가 입점해 있고, 야시장으로도 널리 알려져 있다.</li>
+          <li><strong>대구 근대문화골목</strong> — 청라언덕에서 3·1만세운동길, 계산성당, 이상화·서상돈 고택, 진골목으로 이어지는 도심 걷기 여행 코스로 총 5개 테마 골목으로 구성돼 있다. 붉은 벽돌 근대 건축과 선교사 주택, 골목 이야기가 어우러진 대구 대표 관광 자원이다.</li>
+          <li><strong>김광석다시그리기길</strong> — 방천시장 옆 신천대로변에 조성된 벽화 거리로, 대봉동 출신 가수 고 김광석을 기려 그의 노래와 삶을 벽화·조형물로 담았다. 근대문화골목의 삼덕봉산문화길 코스에 포함되어 젊은 방문객이 즐겨 찾는 명소다.</li>
+        </ul>
+      </section>
+      <section id="r-heritage">
+        <h2>문화유산·문화시설</h2>
+        <ul>
+          <li><strong>계산성당(계산동성당)</strong> — 1902년 건립된 대구 최초의 서양식 성당으로 사적으로 지정된 고딕 양식 건축물이다. 붉은 벽돌과 쌍둥이 첨탑, 장미꽃 문양의 둥근 창이 특징이며 대구 근대 종교·건축사의 상징으로 꼽힌다.</li>
+          <li><strong>대구근대역사관</strong> — 1932년 조선식산은행 대구지점으로 지어져 한국산업은행 대구지점을 거쳐 2011년 근대역사관으로 개관한 건물이다. 대구읍성과 경상감영, 근대 도시 대구의 형성 과정을 전시로 보여준다.</li>
+          <li><strong>대구약령시한의약박물관</strong> — 약전골목(약령시)의 350여 년 한약재 유통 역사를 담은 전문 박물관으로, 약령시 자리에 위치한다. 매년 열리는 대구약령시한방문화축제와 함께 한방 문화 체험 공간으로 운영된다.</li>
+          <li><strong>국채보상운동기념관</strong> — 1907년 대구에서 시작된 국채보상운동을 기리는 기념관으로 국채보상운동기념공원 안에 자리한다. 나라 빚을 국민 성금으로 갚으려던 애국 계몽 운동의 정신과 사료를 전시한다.</li>
+        </ul>
+      </section>
+      <section id="r-nature">
+        <h2>자연·휴식</h2>
+        <ul>
+          <li><strong>국채보상운동기념공원</strong> — 동인동에 조성된 도심 공원으로 국채보상운동의 정신을 기려 이름 붙였다. 명언의 오솔길과 화합의 광장, 도서관, 국채보상운동기념관 등을 갖춰 시민 휴식과 도심 산책 공간으로 사랑받는다.</li>
+          <li><strong>경상감영공원</strong> — 1601년 경상감영이 있던 자리에 조성된 역사 공원으로, 감영의 정문 관풍루와 선화당 등 관아 건물이 남아 있다. 도심 한복판에서 조선시대 감영의 흔적과 녹지를 함께 즐길 수 있는 쉼터다.</li>
+          <li><strong>달성공원</strong> — 삼국시대 토성인 달성(達城) 터에 조성된 대구에서 가장 오래된 공원으로, 동물원과 향토역사관을 갖추고 있다. 도심 속 넓은 녹지와 고목이 어우러져 가족 나들이 명소로 오랫동안 사랑받아 왔다.</li>
+          <li><strong>청라언덕</strong> — 동산동에 자리한 푸른 담쟁이덩굴로 덮인 언덕으로, 개신교 선교사들이 정착해 주택과 병원·학교를 세운 근대 유적지다. 노래 &#x27;동무 생각&#x27;의 배경으로도 알려져 근대문화골목 여행의 출발점이 된다.</li>
+        </ul>
+      </section>
+      <section id="r-transport">
+        <h2>교통</h2>
+        <p>중구는 대구 도시철도의 결절점으로, 1호선과 2호선이 만나는 반월당역이 관내에 자리해 대중교통 접근성이 대구에서 가장 뛰어나다. 반월당역은 출구가 20개가 넘는 대형 환승역으로, 지하상가 메트로프라자와 직결되어 유동 인구가 많다. 1호선은 중앙로역·명덕역·대구역 방면으로, 2호선은 청라언덕역·경대병원역 방면으로 이어져 동성로·약령시·근대골목 등 주요 명소가 대부분 도보권에 놓인다. 경부선 대구역이 북쪽 경계에 인접해 KTX·일반열차 이용이 편리하고, 도심을 관통하는 달구벌대로와 국채보상로·중앙대로가 간선 도로망을 이룬다. 다만 원도심 특성상 도로가 좁고 일방통행이 많아 골목 여행은 지하철과 도보를 함께 이용하는 편이 수월하다.</p>
+      </section>
+      <section id="r-symbols">
+        <h2>지역 상징</h2>
+        <ul class="symbols">
+          <li>구화(꽃): 백일홍</li>
+          <li>구목(나무): 느티나무</li>
+          <li>구조(새): 백로</li>
+        </ul>
+      </section>
+      <section id="r-faq">
+        <h2>자주 묻는 질문</h2>
+        <div class="faq">
+          <details>
+            <summary>대구 중구청은 어디에 있나요?</summary>
+            <p>대구광역시 중구 국채보상로139길 1에 있습니다. 도시철도 1호선 대구역 또는 중앙로역, 1·2호선 반월당역에서 가까워 대중교통으로 접근하기 편리합니다.</p>
+          </details>
+          <details>
+            <summary>대구 근대골목 투어는 어디서 시작하나요?</summary>
+            <p>대표 코스인 근대문화골목은 청라언덕에서 출발해 3·1만세운동길, 계산성당, 이상화·서상돈 고택, 진골목 등을 거치는 약 1.6km 걷기 코스로 2시간 남짓 걸립니다. 도시철도 2호선 청라언덕역에서 시작하면 편리합니다.</p>
+          </details>
+          <details>
+            <summary>약령시(약전골목)는 무엇이 유명한가요?</summary>
+            <p>조선시대부터 이어진 한약재 특화 시장으로, 한약방과 건재상이 밀집해 있습니다. 약령시한의약박물관에서 350여 년 역사를 볼 수 있고, 매년 대구약령시한방문화축제가 열립니다.</p>
+          </details>
+          <details>
+            <summary>중구의 대표 전통 시장은 어디인가요?</summary>
+            <p>대신동의 서문시장이 대구 최대 규모로 섬유·포목과 먹거리, 야시장으로 유명합니다. 이 밖에 약령시, 교동시장, 염매시장, 방천시장 등 특색 있는 시장이 도심에 밀집해 있습니다.</p>
+          </details>
+          <details>
+            <summary>김광석다시그리기길은 어디에 있나요?</summary>
+            <p>대봉동 방천시장 옆 신천대로변에 조성된 벽화 거리로, 가수 고 김광석을 기려 그의 노래와 삶을 벽화·조형물로 담았습니다. 도시철도 3호선 대봉교역이나 2호선 경대병원역에서 가깝습니다.</p>
+          </details>
+          <details>
+            <summary>중구에서 쉬어 갈 만한 공원은 어디인가요?</summary>
+            <p>도심에는 국채보상운동기념공원, 경상감영공원, 달성공원 등이 있습니다. 역사적 의미와 녹지를 함께 갖춰 산책과 휴식을 즐기기 좋습니다.</p>
+          </details>
+        </div>
+      </section>
+      <section id="r-links">
+        <h2>공식 링크</h2>
+        <ul>
+          <li><a href="https://www.jung.daegu.kr/" rel="noopener">대구광역시 중구청 공식 홈페이지</a></li>
+          <li><a href="https://www.jung.daegu.kr/tour/index.do" rel="noopener">대구 중구 관광 안내</a></li>
+        </ul>
+      </section>
+      <section id="r-github">
+        <h2>GitHub</h2>
+        <ul>
+          <li><a href="https://github.com/kr-daegu-jung" rel="noopener">GitHub 조직: kr-daegu-jung</a></li>
+          <li><a href="https://github.com/kr-daegu-jung/kr-daegu-jung.github.io" rel="noopener">이 사이트 저장소</a></li>
+        </ul>
+      </section>
+      <section id="r-sources">
+        <h2>출처</h2>
+        <ul class="sources">
+          <li><a href="https://ko.wikipedia.org/wiki/%EC%A4%91%EA%B5%AC_(%EB%8C%80%EA%B5%AC%EA%B4%91%EC%97%AD%EC%8B%9C)" rel="noopener">중구 (대구광역시) - 위키백과</a> (조회 2026-07-08)</li>
+          <li><a href="https://encykorea.aks.ac.kr/Article/E0067018" rel="noopener">중구(대구광역시) - 한국민족문화대백과사전</a> (조회 2026-07-08)</li>
+          <li><a href="https://tour.daegu.go.kr/index.do?menu_id=00002943" rel="noopener">대구 근대골목 - 대구관광 안내</a> (조회 2026-07-08)</li>
+          <li><a href="https://daegu.grandculture.net/daegu/junggu/toc/GC40000008" rel="noopener">역사가 살아 숨 쉬는 대구의 공원들 - 대구역사문화대전(중구)</a> (조회 2026-07-08)</li>
+        </ul>
+      </section>
+    </div>
+  </main>
   <aside class="cg-sponsors" aria-label="후원 파트너 상세">
     <p class="cg-spon-head"><span class="cg-ad">AD</span> 후원 파트너 <small>이 링크는 광고이며 편집상의 추천이 아닙니다 (rel=&quot;sponsored&quot;).</small></p>
     <ul class="cg-spon-grid">
